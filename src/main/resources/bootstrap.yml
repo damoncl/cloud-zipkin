@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: cloud-zipkin
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: cloud-config
+      fail-fast: true
+      profile: dev
+      label: master
+      name: application,${spring.application.name}
+      username: damon
+      password: 111111
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:10001/eureka,http://peer2:10002/eureka,http://peer3:10003/eureka
