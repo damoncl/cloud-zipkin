@@ -1,19 +1,19 @@
 spring:
   application:
-    name: cloud-zipkin
+    name: zipkin-server
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: cloud-config
+        service-id: config-server
       fail-fast: true
       profile: dev
       label: master
-      name: application,${spring.application.name}
+      name: application, ${spring.application.name}
       username: damon
       password: 111111
 
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:10001/eureka,http://peer2:10002/eureka,http://peer3:10003/eureka
+      defaultZone: http://peer1:10001/eureka,http://peer2:10002/eureka
